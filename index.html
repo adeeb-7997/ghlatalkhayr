@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمية غلة الخير | M.F</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* لون موحد للعناوين بدل الذهبي */
+            --accent-color: #2e7d32; /* أخضر طبيعي للأزرار */
+            --bg-color: #ffffff;
+            --card-bg: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: #444;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* الهيدر والشعار */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: #fff;
+        }
+
+        .logo-img {
+            max-width: 250px;
+            height: auto;
+            /* الشعار بدون خلفية كما طلبت */
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-family: 'Amiri', serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* الشبكة وتصميم البطاقات */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body h3 {
+            font-family: 'Amiri', serif;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* لقطات المخيم (المعرض) */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* سجل الزوار */
+        .contact-form {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #f4f4f4;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="شعار غلة الخير" class="logo-img">
+    </header>
+
+    <section class="hero-section">
+        <h1>مرحباً بكم في غلة الخير</h1>
+        <p>الأصالة، الطبيعة، والضيافة في مكان واحد</p>
+    </section>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1510739859545-e7b9e979de86?auto=format&fit=crop&w=800" alt="خيمة المرعي">
+                <div class="card-body">
+                    <h3>⛺ خيمة المرعي</h3>
+                    <p>مجلس فاخر مجهز بأرقى التجهيزات لاستقبال ضيوفنا الكرام.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1545115286-36100742f6e5?auto=format&fit=crop&w=800" alt="المحمية الخاصة">
+                <div class="card-body">
+                    <h3>🦌 المحمية الخاصة</h3>
+                    <p>استمتع بمشاهدة الإبل في مرعاها الطبيعي وسط مساحات خضراء شاسعة.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800" alt="خيرات المزرعة">
+                <div class="card-body">
+                    <h3>🌾 خيرات المزرعة</h3>
+                    <p>محاصيل عضوية طازجة من الخضار والقمح تُقدم من أرضنا مباشرة.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin: 60px 0; border: 0; border-top: 1px solid #eee;">
+
+        <h2 style="text-align: center; font-family: 'Amiri', serif; color: var(--primary-color);">📸 لقطات من المخيم</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1493246507139-91e8bef99c17?auto=format&fit=crop&w=500" alt="لقطة 1">
+            <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=500" alt="لقطة 2">
+            <img src="https://images.unsplash.com/photo-1470246973918-29a53295c561?auto=format&fit=crop&w=500" alt="لقطة 3">
+            <img src="https://images.unsplash.com/photo-1533630258-0051e737bf68?auto=format&fit=crop&w=500" alt="لقطة 4">
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=500" alt="لقطة 5">
+            <img src="https://images.unsplash.com/photo-1444492442277-623098387e50?auto=format&fit=crop&w=500" alt="لقطة 6">
+        </div>
+
+        <div class="contact-form">
+            <h3 style="text-align: center; font-family: 'Amiri', serif;">🤝 سجل الزوار</h3>
+            <form>
+                <input type="text" placeholder="الاسم الكريم" required>
+                <textarea rows="4" placeholder="كلمة للمكان وأهله"></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        محمية غلة الخير - M.F &copy; 2025
+    </footer>
+
+</body>
+</html>
