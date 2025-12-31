@@ -1,0 +1,369 @@
+<meta charset="UTF-8" />
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+<title>محمية غلة الخير | M.F</title>
+    
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-color: #fbfbf8;
+            --main-text: #2b2b2b;
+            --muted-text: #6b6b6b;
+            --accent-green: #2e7d32;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Alexandria', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+
+        /* --- الهيدر المدمج --- */
+        .top-banner {
+            background: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .logo img {
+            max-width: 180px; /* يمكنك التحكم في حجم الشعار من هنا */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .top-banner h1 {
+            font-size: 1.8rem;
+            color: var(--main-text);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* --- أيقونة القائمة (بدون أيقونات داخلية) --- */
+        .menu-icon {
+            position: absolute;
+            top: 35px;
+            right: 30px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 3px;
+            background-color: var(--main-text);
+            margin: 6px 0;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+
+        /* --- القائمة الجانبية (تم إزالة الأيقونات) --- */
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1002;
+            top: 0;
+            right: 0;
+            background-color: var(--white);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 80px;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+
+        .side-nav a {
+            padding: 15px 32px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: var(--main-text);
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid #fcfcfc;
+            font-weight: 400;
+        }
+
+        .side-nav a:hover {
+            background-color: #f8f9f0;
+            color: var(--accent-green);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* --- محتوى الصفحة --- */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .panel {
+            margin-bottom: 60px;
+        }
+
+        .panel h3 {
+            font-size: 1.5rem;
+            color: var(--main-text);
+            border-right: 5px solid var(--accent-green);
+            padding-right: 15px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .panel p {
+            line-height: 2;
+            color: var(--muted-text);
+            font-size: 1.05rem;
+        }
+
+        .panel img {
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* --- شبكة الصور --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: 0.3s ease;
+        }
+
+        /* --- قسم الحجز --- */
+        .booking-section {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 25px;
+            border: 1px solid #eee;
+            margin: 80px 0;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="text"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 1rem;
+            background-color: #fafafa;
+            outline: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--accent-green);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .top-banner h1 { font-size: 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+
+
+
+    
+<div id="mySidenav" class="side-nav">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="#about" onclick="closeNav()">عن المحمية</a>
+        <a href="#gallery" onclick="closeNav()">صور من المحمية</a>
+        <a href="#booking" onclick="closeNav()">ترتيب الاستقبال</a>
+        <a href="#" onclick="closeNav()">الرئيسية</a>
+    </div>
+
+    
+<div class="top-banner">
+        
+<div class="menu-icon" onclick="openNav()">
+            
+<div></div>
+            
+<div></div>
+            
+<div></div>
+        </div>
+        
+<div class="logo">
+            <img src="logo.png" alt="شعار محمية غلة الخير" />
+        </div>
+        
+<h1>مرحباً بكم في غلة الخير</h1>
+    </div>
+
+    
+<div class="container">
+        
+        
+<div class="panel" id="about">
+            
+<h3>عن المحمية</h3>
+            
+<p>محمية غلة الخير أُنشئت المحمية لتكون ملاذاً للأصالة، ومجلساً يحتفي بقدوم الكرام. هنا، حيث تعانق السكينةُ آفاقَ الطبيعة، نفتح لكم أبواب الهدوء بعيداً عن صخب الحياة وتكلّفها، لتجدوا في رحابنا راحة البال وصدق الوفاء.</p>
+        </div>
+
+        
+<div class="panel">
+            
+<h3>خيمة المرعي (المجلس)</h3>
+            
+<p>مجلس الضيافة الرئيس في المحمية، فيه تُستقبل الوجوه الكريمة، وتُدار السوالف على نار هادئة.</p>
+            <img src="https://images.unsplash.com/photo-1510739859545-e7b9e979de86?q=80&amp;w=1400" alt="خيمة المرعي" />
+        </div>
+
+        
+<div class="panel">
+            
+<h3>خيمة الصباحية - قهوة الصباح</h3>
+            
+<p>تُقدّم القهوة على مهل لتبدأ اليوم بأجواء هادئة وعطرية.</p>
+            <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&amp;w=1400" alt="خيمة الصباحية" />
+        </div>
+
+        
+<div class="panel">
+            
+<h3>خيرات المحمية</h3>
+            
+<p>ما يُقدَّم من خيرات الأرض، خضار طازجة وحليب صافٍ ومشتقات طبيعية.</p>
+            <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&amp;w=1400" alt="خيرات المحمية" />
+        </div>
+
+        
+<div class="panel">
+            
+<h3>الإبل</h3>
+            
+<p>الإبل جزء من هوية المكان، شاهدة على تراث أصيل، وحاضرة كما كانت في حياة أهل البادية.</p>
+            <img src="https://images.unsplash.com/photo-1557223563-703333333a41?q=80&amp;w=1400" alt="الإبل" />
+        </div>
+
+        
+<div class="panel">
+            
+<h3>محمية الربيع</h3>
+            
+<p>عند اعتدال الجو، تكسو الأرض بالخضرة، وتزدهر المراعي الطبيعية.</p>
+            <img src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?q=80&amp;w=1400" alt="محمية الربيع" />
+        </div>
+
+        
+<div class="panel">
+            
+<h3>الكِيف - قهوة مختصة</h3>
+            
+<p>هنا تُحضّر القهوة المختصة بعناية، من حبوب مختارة، وبطريقة تليق بالضيف الكريم.</p>
+            <img src="https://images.unsplash.com/photo-1529692236671-fb99a2fc8a38?q=80&amp;w=1400" alt="قهوة مختصة" />
+        </div>
+
+        
+<div class="panel">
+            
+<h3>خيمة الألعاب</h3>
+            
+<p>مساحة آمنة للأطفال للمرح والتسلية، لتكون الزيارة ممتعة لجميع أفراد العائلة.</p>
+            <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&amp;w=1400" alt="خيمة الألعاب" />
+        </div>
+
+        
+<div class="panel" id="gallery">
+            
+<h3>صور من المحمية</h3>
+            
+<p>لقطات مختارة تعكس جماليات المكان وأجواء الطبيعة في غلة الخير.</p>
+            
+<div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&amp;w=600" alt="لقطة 1" />
+                <img src="https://images.unsplash.com/photo-1493246507139-91e8bef99c17?q=80&amp;w=600" alt="لقطة 2" />
+                <img src="https://images.unsplash.com/photo-1470246973918-29a53295c561?q=80&amp;w=600" alt="لقطة 3" />
+                <img src="https://images.unsplash.com/photo-1533630258-0051e737bf68?q=80&amp;w=600" alt="لقطة 4" />
+                <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&amp;w=600" alt="لقطة 5" />
+                <img src="https://images.unsplash.com/photo-1444492442277-623098387e50?q=80&amp;w=600" alt="لقطة 6" />
+            </div>
+        </div>
+
+        
+<div class="booking-section" id="booking">
+            
+<h3 style="text-align: center; border: none; padding: 0;">ترتيب الاستقبال</h3>
+            <form>
+                
+<div class="input-group">
+                    <label>الاسم الكريم</label>
+                    <input type="text" placeholder="الاسم" required="" />
+                </div>
+                
+<div class="input-group">
+                    <label>رقم الجوال</label>
+                    <input type="tel" placeholder="05XXXXXXXX" required="" />
+                </div>
+                
+<div class="input-group">
+                    <label>ملاحظات</label>
+                    <textarea rows="3" placeholder="ملاحظات إضافية"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">إرسال طلب الاستقبال</button>
+            </form>
+        </div>
+
+        
+<div class="footer">
+            سعدنا بزيارتكم، حياكم الله في محمية غلة الخير &copy; 2025
+        </div>
+    </div>
+
+    
+<script>
+        function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+    </script>
